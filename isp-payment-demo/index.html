@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ISP Billing Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      /* Professional ISP-style gradient */
+      background: linear-gradient(135deg, #0f172a, #1e3a8a, #0ea5e9);
+    }
+
+    .card {
+      width: 380px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      color: white;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      opacity: 0.8;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin: 10px 0 20px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    label {
+      font-size: 12px;
+      opacity: 0.8;
+      display: block;
+      margin-top: 12px;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      background: rgba(255,255,255,0.15);
+      color: white;
+    }
+
+    input::placeholder {
+      color: rgba(255,255,255,0.6);
+    }
+
+    button {
+      width: 100%;
+      margin-top: 18px;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      background: #22c55e;
+      color: white;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #16a34a;
+      transform: translateY(-1px);
+    }
+
+    .footer {
+      margin-top: 12px;
+      font-size: 11px;
+      opacity: 0.7;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="badge">Secure Billing Portal</div>
+
+  <div class="logo">MMR Network and Data Solution</div>
+  <div class="subtitle">Fast • Reliable • Always Connected</div>
+
+  <h2>Pay Your Internet Bill</h2>
+
+  <label>Full Name</label>
+  <input id="name" placeholder="Enter your registered name">
+
+  <label>Account Number</label>
+  <input id="account" placeholder="e.g. ISP-123456">
+
+  <label>Amount (PHP)</label>
+  <input id="amount" type="number" placeholder="0.00">
+
+  <button onclick="payNow()">Pay with GCash/Maya</button>
+
+  <div class="footer">
+    Powered by Xendit
+  </div>
+
+</div>
+
+<script>
+function payNow() {
+  const name = document.getElementById("name").value;
+  const account = document.getElementById("account").value;
+  const amount = document.getElementById("amount").value;
+
+  if (!name || !account || !amount) {
+    alert("Please complete all required fields.");
+    return;
+  }
+
+  localStorage.setItem("payment", JSON.stringify({
+    name,
+    account,
+    amount
+  }));
+
+  window.location.href = "gcash.html";
+}
+</script>
+
+</body>
+</html>
