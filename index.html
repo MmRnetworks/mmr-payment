@@ -69,7 +69,7 @@
     input::placeholder {
       color: rgba(255,255,255,0.6);
     }
-    
+
     .badge {
       display: inline-block;
       background: rgba(255,255,255,0.15);
@@ -101,21 +101,15 @@
       cursor: pointer;
       transition: 0.2s;
       width: 130px;
-      height: 70px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 1px;
     }
 
     .pay-btn:hover {
       transform: translateY(-2px);
       background: rgba(255,255,255,0.25);
-    }
-
-    .pay-btn img {
-      max-width: 100%;
-      max-height: 40px;
-      object-fit: contain;
     }
 
     .footer {
@@ -130,9 +124,7 @@
 <body>
 
 <div class="card">
-
-  <div class="badge">Secure Billing Portal</div>
-
+  
   <div class="logo">MMR Network and Data Solution</div>
   <div class="subtitle">Fast • Reliable • Always Connected</div>
 
@@ -152,11 +144,11 @@
   <div class="payment-options">
 
     <button class="pay-btn" onclick="payNow('gcash')">
-      <img src="https://getcash.ph/gcash/gcash-logo/" alt="GCash">
+      GCASH
     </button>
 
     <button class="pay-btn" onclick="payNow('maya')">
-      <img src="https://seeklogo.com/images/M/maya-logo-3F7A2A7D4F-seeklogo.com.png" alt="Maya">
+      MAYA
     </button>
 
   </div>
